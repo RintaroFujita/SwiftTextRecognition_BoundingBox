@@ -20,6 +20,11 @@
 		11A1158B2C9D5D18002808A3 /* Desert in Resources */ = {isa = PBXBuildFile; fileRef = 11A1158A2C9D5D17002808A3 /* Desert */; };
 		11E823E22CA4593A00B8BD92 /* RecognizedTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */; };
 		11E823E42CA4596300B8BD92 /* ImageTextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */; };
+		11E823E92CA59CBD00B8BD92 /* Mountain in Resources */ = {isa = PBXBuildFile; fileRef = 11E823E52CA59CBB00B8BD92 /* Mountain */; };
+		11E823EA2CA59CBD00B8BD92 /* Coast in Resources */ = {isa = PBXBuildFile; fileRef = 11E823E62CA59CBC00B8BD92 /* Coast */; };
+		11E823EB2CA59CBD00B8BD92 /* Glacier in Resources */ = {isa = PBXBuildFile; fileRef = 11E823E72CA59CBC00B8BD92 /* Glacier */; };
+		11E823EC2CA59CBD00B8BD92 /* Desert in Resources */ = {isa = PBXBuildFile; fileRef = 11E823E82CA59CBD00B8BD92 /* Desert */; };
+		11E823EE2CA59CC900B8BD92 /* Forest_images in Resources */ = {isa = PBXBuildFile; fileRef = 11E823ED2CA59CC900B8BD92 /* Forest_images */; };
 		FAB06E002272614F00B3D181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB06DFF2272614F00B3D181 /* AppDelegate.swift */; };
 		FAB06E072272615200B3D181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB06E062272615200B3D181 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -38,6 +43,11 @@
 		11A1158A2C9D5D17002808A3 /* Desert */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Desert; sourceTree = "<group>"; };
 		11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedTextInfo.swift; sourceTree = "<group>"; };
 		11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextRecognition.swift; sourceTree = "<group>"; };
+		11E823E52CA59CBB00B8BD92 /* Mountain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Mountain; sourceTree = "<group>"; };
+		11E823E62CA59CBC00B8BD92 /* Coast */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coast; sourceTree = "<group>"; };
+		11E823E72CA59CBC00B8BD92 /* Glacier */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Glacier; sourceTree = "<group>"; };
+		11E823E82CA59CBD00B8BD92 /* Desert */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Desert; sourceTree = "<group>"; };
+		11E823ED2CA59CC900B8BD92 /* Forest_images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Forest_images; sourceTree = "<group>"; };
 		387197103872D1C000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B7E5015DB18CE36C547E234 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		F8CBF7B03309697924E769C1 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -104,10 +114,15 @@
 		FAB06DFE2272614F00B3D181 /* BusinessCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				11E823ED2CA59CC900B8BD92 /* Forest_images */,
 				11A1158A2C9D5D17002808A3 /* Desert */,
 				11A115882C9C3D70002808A3 /* Coast */,
+				11E823E62CA59CBC00B8BD92 /* Coast */,
+				11E823E82CA59CBD00B8BD92 /* Desert */,
+				11E823E72CA59CBC00B8BD92 /* Glacier */,
 				11A115862C9C3D57002808A3 /* Mountain */,
 				11A115842C9C3D42002808A3 /* Glacier */,
+				11E823E52CA59CBB00B8BD92 /* Mountain */,
 				11A10DB12C99CC61002808A3 /* model_512 */,
 				11A10DAF2C99A496002808A3 /* LML 2 */,
 				069A929A2281F363001E466B /* BusinessCardContentsViewController.swift */,
@@ -184,9 +199,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E823EC2CA59CBD00B8BD92 /* Desert in Resources */,
+				11E823EE2CA59CC900B8BD92 /* Forest_images in Resources */,
+				11E823EB2CA59CBD00B8BD92 /* Glacier in Resources */,
+				11E823EA2CA59CBD00B8BD92 /* Coast in Resources */,
 				11A10DB02C99A496002808A3 /* LML 2 in Resources */,
 				11A115872C9C3D57002808A3 /* Mountain in Resources */,
 				FAB06E072272615200B3D181 /* Assets.xcassets in Resources */,
+				11E823E92CA59CBD00B8BD92 /* Mountain in Resources */,
 				11A115892C9C3D70002808A3 /* Coast in Resources */,
 				11A115852C9C3D43002808A3 /* Glacier in Resources */,
 				11A10DB22C99CC61002808A3 /* model_512 in Resources */,

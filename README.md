@@ -1,6 +1,6 @@
-# Structuring Recognized Text on a Document
+# Swift Text Recogniton Bounding Box on a Documentt
 
-Detect, recognize, and structure text on a business card or receipt using Vision and VisionKit.
+Using ImageTextRecognition.swift and ContentView.swift.
 
 ## Overview
 
