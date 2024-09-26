@@ -1,11 +1,11 @@
+//ContentView.swift
 import SwiftUI
-
 @available(iOS 14.0, *)
 struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
-    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Desert"
-    
+    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Coast"
+    @State private var saveDirectory: String = "/Users/r/Desktop/SavedTextRecognitionImages" //save path
     var body: some View {
         VStack {
             Text("Recognized Text and Files:")
@@ -14,12 +14,11 @@ struct ContentView: View {
             
             List(imageTextRecognition.recognizedTextInfoList) { recognizedInfo in
                 Section(header: Text("File: \(recognizedInfo.filename)")) {
-                    // Display the image
                     if let uiImage = UIImage(contentsOfFile: "\(directoryPath)/\(recognizedInfo.filename)") {
                         let imageSize = uiImage.size
                         let aspectRatio = imageSize.width / imageSize.height
-                        let displayedWidth: CGFloat = 300 // Display width
-                        let displayedHeight: CGFloat = displayedWidth / aspectRatio // Maintain aspect ratio
+                        let displayedWidth: CGFloat = 300
+                        let displayedHeight: CGFloat = displayedWidth / aspectRatio
                         
                         ZStack {
                             Image(uiImage: uiImage)
@@ -27,14 +26,10 @@ struct ContentView: View {
                                 .scaledToFit()
                                 .frame(width: displayedWidth, height: displayedHeight)
                             
-                            // Overlay bounding boxes
                             GeometryReader { geometry in
                                 ForEach(recognizedInfo.boundingBoxes, id: \.self) { box in
-                                    // Scale calculations
                                     let scaleX = displayedWidth / imageSize.width
                                     let scaleY = displayedHeight / imageSize.height
-
-                                    // Adjust bounding box position and size
                                     let adjustedOriginX = box.rect.origin.x * scaleX
                                     let adjustedOriginY = box.rect.origin.y * scaleY
                                     let adjustedWidth = box.rect.width * scaleX
@@ -47,11 +42,14 @@ struct ContentView: View {
                                                   y: adjustedOriginY + adjustedHeight / 2)
                                 }
                             }
-                            .frame(width: displayedWidth, height: displayedHeight) // Ensure the GeometryReader has the same size as the image
+                            .frame(width: displayedWidth, height: displayedHeight)
                         }
+                        Button("Save Image with Bounding Boxes") {
+                            saveImageWithBoundingBoxes(uiImage: uiImage, recognizedInfo: recognizedInfo, savePath: saveDirectory)
+                        }
+                        .padding(.top, 5)
                     }
                     
-                    // Display recognized text
                     ForEach(recognizedInfo.recognizedText, id: \.self) { text in
                         Text(text)
                     }
@@ -62,9 +60,51 @@ struct ContentView: View {
                 imageTextRecognition.recognizeText(from: directoryPath)
             }
             .padding()
+
+            HStack {
+                Text("Save Directory:")
+                TextField("Save path", text: $saveDirectory)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+            }
         }
         .onAppear {
-            imageTextRecognition.recognizeText(from: directoryPath) // Automatically recognize text
+            imageTextRecognition.recognizeText(from: directoryPath)
+        }
+    }
+    
+    func saveImageWithBoundingBoxes(uiImage: UIImage, recognizedInfo: RecognizedTextData, savePath: String) {
+        let renderer = UIGraphicsImageRenderer(size: uiImage.size)
+        let renderedImage = renderer.image { context in
+            uiImage.draw(at: .zero)
+
+            for box in recognizedInfo.boundingBoxes {
+                let rect = box.rect
+                let convertedRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: rect.size.height)
+                let path = UIBezierPath(rect: convertedRect)
+                UIColor.red.setStroke()
+                path.lineWidth = 2
+                path.stroke()
+            }
+        }
+        
+        let directoryName = URL(fileURLWithPath: directoryPath).lastPathComponent
+        
+
+        let recognizedTextForFilename = recognizedInfo.recognizedText.first?.replacingOccurrences(of: "[^a-zA-Z0-9]", with: "_", options: .regularExpression) ?? "NoText"
+
+        let combinedFilename = "\(directoryName)_\(recognizedInfo.filename)_\(recognizedTextForFilename.prefix(10)).png"
+        let filePath = "\(savePath)/\(combinedFilename)"
+        
+        if let data = renderedImage.pngData() {
+            do {
+                try data.write(to: URL(fileURLWithPath: filePath))
+                print("Image saved to \(filePath)")
+            } catch {
+                print("Failed to save image: \(error.localizedDescription)")
+            }
+        } else {
+            print("Failed to save image.")
         }
     }
 }
@@ -74,7 +114,7 @@ struct ContentView_Previews: PreviewProvider {
         if #available(iOS 14.0, *) {
             ContentView()
         } else {
-            // Fallback for older versions
+            
         }
     }
 }

@@ -1,3 +1,4 @@
+//ImageTextRecognition.swift
 import Foundation
 import Vision
 import SwiftUI
@@ -6,7 +7,7 @@ class ImageTextRecognition: ObservableObject {
     @Published var recognizedTextInfoList: [RecognizedTextData] = []
     
     func recognizeText(from directoryPath: String) {
-        recognizedTextInfoList.removeAll() // 以前の結果をクリア
+        recognizedTextInfoList.removeAll()
 
         let fileManager = FileManager.default
         
@@ -40,20 +41,17 @@ class ImageTextRecognition: ObservableObject {
                         observation.topCandidates(1).first?.string
                     }
                     
-                    // バウンディングボックスを取得
                     let boundingBoxes = observations.map { observation in
                         let boundingBox = observation.boundingBox
                         let convertedBox = BoundingBox(rect: self.convert(boundingBox: boundingBox, to: CGRect(origin: .zero, size: uiImage.size)))
                         return convertedBox
                     }
 
-                    // 認識されたテキストがあるファイルのみを追加
                     if !recognizedStrings.isEmpty {
                         DispatchQueue.main.async {
                             let recognizedInfo = RecognizedTextData(filename: imageName, recognizedText: recognizedStrings, boundingBoxes: boundingBoxes)
                             self.recognizedTextInfoList.append(recognizedInfo)
 
-                            // 認識したテキストをプリント
                             print("File: \(imageName)")
                             recognizedStrings.forEach { recognizedText in
                                 print("Recognized Text: \(recognizedText)")
@@ -73,7 +71,6 @@ class ImageTextRecognition: ObservableObject {
         }
     }
 
-    // バウンディングボックスを変換するメソッド
     func convert(boundingBox: CGRect, to bounds: CGRect) -> CGRect {
         let imageWidth = bounds.width
         let imageHeight = bounds.height
