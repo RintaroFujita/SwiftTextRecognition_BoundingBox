@@ -1,6 +1,6 @@
-# Swift Text Recogniton Bounding Box on a Documentt
+# Swift Text Recogniton Bounding Box on a Document
 
-Using ImageTextRecognition.swift and ContentView.swift.
+Using ImageTextRecognition.swift and ContentView.swift
 
 ## Overview
 
