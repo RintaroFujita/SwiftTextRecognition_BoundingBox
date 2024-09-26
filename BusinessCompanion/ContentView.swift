@@ -14,43 +14,44 @@ struct ContentView: View {
             
             List(imageTextRecognition.recognizedTextInfoList) { recognizedInfo in
                 Section(header: Text("File: \(recognizedInfo.filename)")) {
-                    // 画像を表示
+                    // Display the image
                     if let uiImage = UIImage(contentsOfFile: "\(directoryPath)/\(recognizedInfo.filename)") {
                         let imageSize = uiImage.size
                         let aspectRatio = imageSize.width / imageSize.height
-                        let displayedWidth: CGFloat = 300 // 表示する幅
-                        let displayedHeight: CGFloat = displayedWidth / aspectRatio // アスペクト比を維持
+                        let displayedWidth: CGFloat = 300 // Display width
+                        let displayedHeight: CGFloat = displayedWidth / aspectRatio // Maintain aspect ratio
                         
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: displayedWidth, height: displayedHeight)
-                            .overlay(
-                                // バウンディングボックスを表示する
-                                GeometryReader { geometry in
-                                    ForEach(recognizedInfo.boundingBoxes, id: \.self) { box in
-                                        // スケールを計算
-                                        let scaleX = displayedWidth / imageSize.width
-                                        let scaleY = displayedHeight / imageSize.height
+                        ZStack {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: displayedWidth, height: displayedHeight)
+                            
+                            // Overlay bounding boxes
+                            GeometryReader { geometry in
+                                ForEach(recognizedInfo.boundingBoxes, id: \.self) { box in
+                                    // Scale calculations
+                                    let scaleX = displayedWidth / imageSize.width
+                                    let scaleY = displayedHeight / imageSize.height
 
-                                        // バウンディングボックスの位置とサイズをスケールに基づいて調整
-                                        let adjustedOriginX = box.rect.origin.x * scaleX
-                                        let adjustedOriginY = box.rect.origin.y * scaleY
-                                        let adjustedWidth = box.rect.width * scaleX
-                                        let adjustedHeight = box.rect.height * scaleY
+                                    // Adjust bounding box position and size
+                                    let adjustedOriginX = box.rect.origin.x * scaleX
+                                    let adjustedOriginY = box.rect.origin.y * scaleY
+                                    let adjustedWidth = box.rect.width * scaleX
+                                    let adjustedHeight = box.rect.height * scaleY
 
-                                        Rectangle()
-                                            .stroke(Color.red, lineWidth: 2)
-                                            .frame(width: adjustedWidth, height: adjustedHeight)
-                                            .position(x: adjustedOriginX + adjustedWidth / 2,
-                                                      y: adjustedOriginY + adjustedHeight / 2) // 中心に配置
-                                            .offset(x: -geometry.size.width / 2, y: -geometry.size.height / 2) // 位置調整
-                                    }
+                                    Rectangle()
+                                        .stroke(Color.red, lineWidth: 2)
+                                        .frame(width: adjustedWidth, height: adjustedHeight)
+                                        .position(x: adjustedOriginX + adjustedWidth / 2,
+                                                  y: adjustedOriginY + adjustedHeight / 2)
                                 }
-                            )
+                            }
+                            .frame(width: displayedWidth, height: displayedHeight) // Ensure the GeometryReader has the same size as the image
+                        }
                     }
                     
-                    // 認識されたテキストを表示
+                    // Display recognized text
                     ForEach(recognizedInfo.recognizedText, id: \.self) { text in
                         Text(text)
                     }
@@ -63,7 +64,7 @@ struct ContentView: View {
             .padding()
         }
         .onAppear {
-            imageTextRecognition.recognizeText(from: directoryPath) // 自動的にテキストを認識
+            imageTextRecognition.recognizeText(from: directoryPath) // Automatically recognize text
         }
     }
 }
@@ -73,7 +74,7 @@ struct ContentView_Previews: PreviewProvider {
         if #available(iOS 14.0, *) {
             ContentView()
         } else {
-            // 古いバージョンのフォールバック
+            // Fallback for older versions
         }
     }
 }
