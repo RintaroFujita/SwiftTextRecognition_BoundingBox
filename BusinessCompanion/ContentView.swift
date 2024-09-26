@@ -5,7 +5,7 @@ struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
     let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Coast"
-    @State private var saveDirectory: String = "/Users/r/Desktop/SavedTextRecognitionImages" //save path
+    @State private var saveDirectory: String = "/Users/r/Desktop/SavedTextRecognitionImages/Coast" //change each time!!!!
     var body: some View {
         VStack {
             Text("Recognized Text and Files:")
