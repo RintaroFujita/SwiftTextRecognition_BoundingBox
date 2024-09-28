@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0664F8742282062900AF5A27 /* ReceiptContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664F8732282062900AF5A27 /* ReceiptContentsViewController.swift */; };
 		0664F8782282305400AF5A27 /* OtherContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664F8772282305400AF5A27 /* OtherContentsViewController.swift */; };
 		069A929B2281F363001E466B /* BusinessCardContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A929A2281F363001E466B /* BusinessCardContentsViewController.swift */; };
 		06DBA5322280B4EB00A015FC /* RecognizedTextDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBA5312280B4EB00A015FC /* RecognizedTextDataSource.swift */; };
+		119907E62CA7DC5E00458BD8 /* AnnualCrop in Resources */ = {isa = PBXBuildFile; fileRef = 119907E52CA7DC5E00458BD8 /* AnnualCrop */; };
+		119907E82CA7DC6900458BD8 /* Industrial in Resources */ = {isa = PBXBuildFile; fileRef = 119907E72CA7DC6900458BD8 /* Industrial */; };
+		119907EA2CA7E06100458BD8 /* PermanentCrop in Resources */ = {isa = PBXBuildFile; fileRef = 119907E92CA7E06000458BD8 /* PermanentCrop */; };
+		119907EC2CA7F6C300458BD8 /* Highway in Resources */ = {isa = PBXBuildFile; fileRef = 119907EB2CA7F6C300458BD8 /* Highway */; };
+		119907EE2CA7F6CD00458BD8 /* Pasture in Resources */ = {isa = PBXBuildFile; fileRef = 119907ED2CA7F6CC00458BD8 /* Pasture */; };
+		119907F02CA7F89400458BD8 /* SeaLake in Resources */ = {isa = PBXBuildFile; fileRef = 119907EF2CA7F89400458BD8 /* SeaLake */; };
+		119907F22CA7F8D300458BD8 /* Residential in Resources */ = {isa = PBXBuildFile; fileRef = 119907F12CA7F8D300458BD8 /* Residential */; };
+		119907F42CA8015300458BD8 /* ReceiptContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119907F32CA8015300458BD8 /* ReceiptContentsViewController.swift */; };
+		1199F3812CA7D95600458BD8 /* HerbaceousVegetation in Resources */ = {isa = PBXBuildFile; fileRef = 1199F37F2CA7D95500458BD8 /* HerbaceousVegetation */; };
 		11A10DAC2C9996CF002808A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A10DAB2C9996CF002808A3 /* ContentView.swift */; };
 		11A10DB02C99A496002808A3 /* LML 2 in Resources */ = {isa = PBXBuildFile; fileRef = 11A10DAF2C99A496002808A3 /* LML 2 */; };
 		11E823E22CA4593A00B8BD92 /* RecognizedTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */; };
@@ -20,10 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0664F8732282062900AF5A27 /* ReceiptContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptContentsViewController.swift; sourceTree = "<group>"; };
 		0664F8772282305400AF5A27 /* OtherContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherContentsViewController.swift; sourceTree = "<group>"; };
 		069A929A2281F363001E466B /* BusinessCardContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCardContentsViewController.swift; sourceTree = "<group>"; };
 		06DBA5312280B4EB00A015FC /* RecognizedTextDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizedTextDataSource.swift; sourceTree = "<group>"; };
+		119907E52CA7DC5E00458BD8 /* AnnualCrop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnnualCrop; sourceTree = "<group>"; };
+		119907E72CA7DC6900458BD8 /* Industrial */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Industrial; sourceTree = "<group>"; };
+		119907E92CA7E06000458BD8 /* PermanentCrop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PermanentCrop; sourceTree = "<group>"; };
+		119907EB2CA7F6C300458BD8 /* Highway */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Highway; sourceTree = "<group>"; };
+		119907ED2CA7F6CC00458BD8 /* Pasture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pasture; sourceTree = "<group>"; };
+		119907EF2CA7F89400458BD8 /* SeaLake */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SeaLake; sourceTree = "<group>"; };
+		119907F12CA7F8D300458BD8 /* Residential */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Residential; sourceTree = "<group>"; };
+		119907F32CA8015300458BD8 /* ReceiptContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptContentsViewController.swift; sourceTree = "<group>"; };
+		1199F37F2CA7D95500458BD8 /* HerbaceousVegetation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HerbaceousVegetation; sourceTree = "<group>"; };
 		11A10DAB2C9996CF002808A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		11A10DAF2C99A496002808A3 /* LML 2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "LML 2"; sourceTree = "<group>"; };
 		11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedTextInfo.swift; sourceTree = "<group>"; };
@@ -94,10 +110,18 @@
 		FAB06DFE2272614F00B3D181 /* BusinessCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				119907F12CA7F8D300458BD8 /* Residential */,
+				119907EF2CA7F89400458BD8 /* SeaLake */,
+				119907ED2CA7F6CC00458BD8 /* Pasture */,
+				119907EB2CA7F6C300458BD8 /* Highway */,
+				119907E92CA7E06000458BD8 /* PermanentCrop */,
+				119907E72CA7DC6900458BD8 /* Industrial */,
+				119907E52CA7DC5E00458BD8 /* AnnualCrop */,
+				1199F37F2CA7D95500458BD8 /* HerbaceousVegetation */,
 				11A10DAF2C99A496002808A3 /* LML 2 */,
 				069A929A2281F363001E466B /* BusinessCardContentsViewController.swift */,
+				119907F32CA8015300458BD8 /* ReceiptContentsViewController.swift */,
 				0664F8772282305400AF5A27 /* OtherContentsViewController.swift */,
-				0664F8732282062900AF5A27 /* ReceiptContentsViewController.swift */,
 				06DBA5312280B4EB00A015FC /* RecognizedTextDataSource.swift */,
 				FAB06DFF2272614F00B3D181 /* AppDelegate.swift */,
 				11A10DAB2C9996CF002808A3 /* ContentView.swift */,
@@ -169,8 +193,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119907E82CA7DC6900458BD8 /* Industrial in Resources */,
+				119907E62CA7DC5E00458BD8 /* AnnualCrop in Resources */,
+				119907EC2CA7F6C300458BD8 /* Highway in Resources */,
+				119907F02CA7F89400458BD8 /* SeaLake in Resources */,
+				119907EE2CA7F6CD00458BD8 /* Pasture in Resources */,
+				119907F22CA7F8D300458BD8 /* Residential in Resources */,
 				11A10DB02C99A496002808A3 /* LML 2 in Resources */,
 				FAB06E072272615200B3D181 /* Assets.xcassets in Resources */,
+				1199F3812CA7D95600458BD8 /* HerbaceousVegetation in Resources */,
+				119907EA2CA7E06100458BD8 /* PermanentCrop in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,11 +216,11 @@
 				11E823E42CA4596300B8BD92 /* ImageTextRecognition.swift in Sources */,
 				06DBA5322280B4EB00A015FC /* RecognizedTextDataSource.swift in Sources */,
 				11A10DAC2C9996CF002808A3 /* ContentView.swift in Sources */,
-				0664F8742282062900AF5A27 /* ReceiptContentsViewController.swift in Sources */,
 				069A929B2281F363001E466B /* BusinessCardContentsViewController.swift in Sources */,
 				FAB06E002272614F00B3D181 /* AppDelegate.swift in Sources */,
 				11E823E22CA4593A00B8BD92 /* RecognizedTextInfo.swift in Sources */,
 				0664F8782282305400AF5A27 /* OtherContentsViewController.swift in Sources */,
+				119907F42CA8015300458BD8 /* ReceiptContentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
