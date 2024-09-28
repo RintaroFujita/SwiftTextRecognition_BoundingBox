@@ -17,6 +17,7 @@
 		119907FE2CA80C3000458BD8 /* ShipsImages_2 in Resources */ = {isa = PBXBuildFile; fileRef = 119907FA2CA80C2F00458BD8 /* ShipsImages_2 */; };
 		119907FF2CA80C3000458BD8 /* ShipsImages_5 in Resources */ = {isa = PBXBuildFile; fileRef = 119907FB2CA80C2F00458BD8 /* ShipsImages_5 */; };
 		119908002CA80C3000458BD8 /* ShipsImages_3 in Resources */ = {isa = PBXBuildFile; fileRef = 119907FC2CA80C3000458BD8 /* ShipsImages_3 */; };
+		119908022CA8460E00458BD8 /* map_photo1 in Resources */ = {isa = PBXBuildFile; fileRef = 119908012CA8460E00458BD8 /* map_photo1 */; };
 		11A10DAC2C9996CF002808A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A10DAB2C9996CF002808A3 /* ContentView.swift */; };
 		11E823E22CA4593A00B8BD92 /* RecognizedTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */; };
 		11E823E42CA4596300B8BD92 /* ImageTextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */; };
@@ -35,6 +36,7 @@
 		119907FA2CA80C2F00458BD8 /* ShipsImages_2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShipsImages_2; sourceTree = "<group>"; };
 		119907FB2CA80C2F00458BD8 /* ShipsImages_5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShipsImages_5; sourceTree = "<group>"; };
 		119907FC2CA80C3000458BD8 /* ShipsImages_3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShipsImages_3; sourceTree = "<group>"; };
+		119908012CA8460E00458BD8 /* map_photo1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo1; sourceTree = "<group>"; };
 		11A10DAB2C9996CF002808A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedTextInfo.swift; sourceTree = "<group>"; };
 		11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextRecognition.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		FAB06DFE2272614F00B3D181 /* BusinessCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				119908012CA8460E00458BD8 /* map_photo1 */,
 				119907FA2CA80C2F00458BD8 /* ShipsImages_2 */,
 				119907FC2CA80C3000458BD8 /* ShipsImages_3 */,
 				119907F92CA80C2E00458BD8 /* ShipsImages_4 */,
@@ -186,6 +189,7 @@
 			files = (
 				119907F62CA803B100458BD8 /* LML 2 in Resources */,
 				119908002CA80C3000458BD8 /* ShipsImages_3 in Resources */,
+				119908022CA8460E00458BD8 /* map_photo1 in Resources */,
 				119907FD2CA80C3000458BD8 /* ShipsImages_4 in Resources */,
 				119907F82CA8093200458BD8 /* ShipsImages_1 in Resources */,
 				FAB06E072272615200B3D181 /* Assets.xcassets in Resources */,
