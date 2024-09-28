@@ -4,8 +4,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
-    let directoryPath = "Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Residential"
-    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/esidential" //change each time!!!!
+    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/ShipsImages_5"
+    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/ShipsImages" //change each time!!!!
     var body: some View {
         VStack {
             Text("Recognized Text and Files:")
