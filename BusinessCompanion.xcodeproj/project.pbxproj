@@ -18,6 +18,10 @@
 		119907FF2CA80C3000458BD8 /* ShipsImages_5 in Resources */ = {isa = PBXBuildFile; fileRef = 119907FB2CA80C2F00458BD8 /* ShipsImages_5 */; };
 		119908002CA80C3000458BD8 /* ShipsImages_3 in Resources */ = {isa = PBXBuildFile; fileRef = 119907FC2CA80C3000458BD8 /* ShipsImages_3 */; };
 		119908022CA8460E00458BD8 /* map_photo1 in Resources */ = {isa = PBXBuildFile; fileRef = 119908012CA8460E00458BD8 /* map_photo1 */; };
+		119908042CA94DA100458BD8 /* map_photo2 in Resources */ = {isa = PBXBuildFile; fileRef = 119908032CA94DA100458BD8 /* map_photo2 */; };
+		119908062CA94E5200458BD8 /* map_photo3 in Resources */ = {isa = PBXBuildFile; fileRef = 119908052CA94E5200458BD8 /* map_photo3 */; };
+		119908092CA954EB00458BD8 /* map_photo5 in Resources */ = {isa = PBXBuildFile; fileRef = 119908072CA954EA00458BD8 /* map_photo5 */; };
+		1199080A2CA954EB00458BD8 /* map_photo4 in Resources */ = {isa = PBXBuildFile; fileRef = 119908082CA954EB00458BD8 /* map_photo4 */; };
 		11A10DAC2C9996CF002808A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A10DAB2C9996CF002808A3 /* ContentView.swift */; };
 		11E823E22CA4593A00B8BD92 /* RecognizedTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */; };
 		11E823E42CA4596300B8BD92 /* ImageTextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */; };
@@ -37,6 +41,10 @@
 		119907FB2CA80C2F00458BD8 /* ShipsImages_5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShipsImages_5; sourceTree = "<group>"; };
 		119907FC2CA80C3000458BD8 /* ShipsImages_3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShipsImages_3; sourceTree = "<group>"; };
 		119908012CA8460E00458BD8 /* map_photo1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo1; sourceTree = "<group>"; };
+		119908032CA94DA100458BD8 /* map_photo2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo2; sourceTree = "<group>"; };
+		119908052CA94E5200458BD8 /* map_photo3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo3; sourceTree = "<group>"; };
+		119908072CA954EA00458BD8 /* map_photo5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo5; sourceTree = "<group>"; };
+		119908082CA954EB00458BD8 /* map_photo4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map_photo4; sourceTree = "<group>"; };
 		11A10DAB2C9996CF002808A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedTextInfo.swift; sourceTree = "<group>"; };
 		11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextRecognition.swift; sourceTree = "<group>"; };
@@ -106,6 +114,8 @@
 		FAB06DFE2272614F00B3D181 /* BusinessCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				119908052CA94E5200458BD8 /* map_photo3 */,
+				119908032CA94DA100458BD8 /* map_photo2 */,
 				119908012CA8460E00458BD8 /* map_photo1 */,
 				119907FA2CA80C2F00458BD8 /* ShipsImages_2 */,
 				119907FC2CA80C3000458BD8 /* ShipsImages_3 */,
@@ -119,6 +129,8 @@
 				06DBA5312280B4EB00A015FC /* RecognizedTextDataSource.swift */,
 				FAB06DFF2272614F00B3D181 /* AppDelegate.swift */,
 				11A10DAB2C9996CF002808A3 /* ContentView.swift */,
+				119908082CA954EB00458BD8 /* map_photo4 */,
+				119908072CA954EA00458BD8 /* map_photo5 */,
 				11E823E12CA4593A00B8BD92 /* RecognizedTextInfo.swift */,
 				11E823E32CA4596300B8BD92 /* ImageTextRecognition.swift */,
 				FAB06E062272615200B3D181 /* Assets.xcassets */,
@@ -188,12 +200,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				119907F62CA803B100458BD8 /* LML 2 in Resources */,
+				1199080A2CA954EB00458BD8 /* map_photo4 in Resources */,
 				119908002CA80C3000458BD8 /* ShipsImages_3 in Resources */,
 				119908022CA8460E00458BD8 /* map_photo1 in Resources */,
+				119908042CA94DA100458BD8 /* map_photo2 in Resources */,
 				119907FD2CA80C3000458BD8 /* ShipsImages_4 in Resources */,
 				119907F82CA8093200458BD8 /* ShipsImages_1 in Resources */,
+				119908062CA94E5200458BD8 /* map_photo3 in Resources */,
 				FAB06E072272615200B3D181 /* Assets.xcassets in Resources */,
 				119907FF2CA80C3000458BD8 /* ShipsImages_5 in Resources */,
+				119908092CA954EB00458BD8 /* map_photo5 in Resources */,
 				119907FE2CA80C3000458BD8 /* ShipsImages_2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
