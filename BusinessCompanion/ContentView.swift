@@ -1,12 +1,14 @@
 //ContentView.swift
 import SwiftUI
+
 @available(iOS 14.0, *)
 struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
     let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Parking"
     @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/Parking" // Change each time!
-        var body: some View {
+
+    var body: some View {
         VStack {
             Text("Recognized Text and Files:")
                 .font(.headline)
@@ -60,6 +62,11 @@ struct ContentView: View {
             
             Button("Recognize Text") {
                 imageTextRecognition.recognizeText(from: directoryPath)
+            }
+            .padding()
+
+            Button("Save All Images with Bounding Boxes") {
+                saveAllImagesWithBoundingBoxes()
             }
             .padding()
 
@@ -134,6 +141,13 @@ struct ContentView: View {
             }
         } else {
             print("Failed to save image.")
+        }
+    }
+    func saveAllImagesWithBoundingBoxes() {
+        for recognizedInfo in imageTextRecognition.recognizedTextInfoList {
+            if let uiImage = UIImage(contentsOfFile: "\(directoryPath)/\(recognizedInfo.filename)") {
+                saveImageWithBoundingBoxes(uiImage: uiImage, recognizedInfo: recognizedInfo, savePath: saveDirectory)
+            }
         }
     }
 }
