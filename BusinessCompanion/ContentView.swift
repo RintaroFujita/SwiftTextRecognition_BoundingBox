@@ -80,17 +80,46 @@ struct ContentView: View {
         let renderedImage = renderer.image { context in
             uiImage.draw(at: .zero)
 
+            // Font settings for drawing recognized text
+            let fontSize: CGFloat = 12
+            let textAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: fontSize),
+                .foregroundColor: UIColor.black // Default text color, can be customized
+            ]
+
             for (index, box) in recognizedInfo.boundingBoxes.enumerated() {
                 let rect = box.rect
                 let convertedRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: rect.size.height)
+                
+                // Draw bounding box
                 let path = UIBezierPath(rect: convertedRect)
                 let color = imageTextRecognition.colorForCharacter(at: index, total: recognizedInfo.recognizedText.count) // Color for each character
                 color.setStroke()
                 path.lineWidth = 2
                 path.stroke()
+
+                // Draw recognized text inside or near the bounding box
+                if index < recognizedInfo.recognizedText.count {
+                    let recognizedText = recognizedInfo.recognizedText[index]
+
+                    // Set text color same as bounding box color
+                    let textColorAttributes: [NSAttributedString.Key: Any] = [
+                        .font: UIFont.systemFont(ofSize: fontSize),
+                        .foregroundColor: color
+                    ]
+
+                    // Calculate text position (above the bounding box)
+                    let textOrigin = CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y - fontSize - 2) // Text above bounding box
+
+                    // Draw full text without wrapping it inside the box width
+                    let textRect = CGRect(origin: textOrigin, size: CGSize(width: uiImage.size.width, height: fontSize)) // Text spans full image width
+
+                    // Draw text
+                    recognizedText.draw(in: textRect, withAttributes: textColorAttributes)
+                }
             }
         }
-        
+
         let directoryName = URL(fileURLWithPath: directoryPath).lastPathComponent
         let recognizedTextForFilename = recognizedInfo.recognizedText.first?.replacingOccurrences(of: "[^a-zA-Z0-9]", with: "_", options: .regularExpression) ?? "NoText"
         let combinedFilename = "\(directoryName)_\(recognizedInfo.filename)_\(recognizedTextForFilename.prefix(10)).png"
