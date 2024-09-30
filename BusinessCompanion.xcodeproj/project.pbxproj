@@ -13,6 +13,17 @@
 		11525D062CAA78F2002FFA60 /* Parking in Resources */ = {isa = PBXBuildFile; fileRef = 11525D052CAA78F2002FFA60 /* Parking */; };
 		11525D082CAA7907002FFA60 /* Airport in Resources */ = {isa = PBXBuildFile; fileRef = 11525D072CAA7907002FFA60 /* Airport */; };
 		11525D0A2CAA790E002FFA60 /* Port in Resources */ = {isa = PBXBuildFile; fileRef = 11525D092CAA790E002FFA60 /* Port */; };
+		11525D0E2CAB2987002FFA60 /* City in Resources */ = {isa = PBXBuildFile; fileRef = 11525D0B2CAB2986002FFA60 /* City */; };
+		11525D0F2CAB2987002FFA60 /* Grassland in Resources */ = {isa = PBXBuildFile; fileRef = 11525D0C2CAB2986002FFA60 /* Grassland */; };
+		11525D102CAB2987002FFA60 /* Highway in Resources */ = {isa = PBXBuildFile; fileRef = 11525D0D2CAB2987002FFA60 /* Highway */; };
+		11525D122CAB34A6002FFA60 /* Agriculture in Resources */ = {isa = PBXBuildFile; fileRef = 11525D112CAB34A6002FFA60 /* Agriculture */; };
+		11525D142CAB34B0002FFA60 /* Beach in Resources */ = {isa = PBXBuildFile; fileRef = 11525D132CAB34B0002FFA60 /* Beach */; };
+		11525D172CAB34BE002FFA60 /* Desert in Resources */ = {isa = PBXBuildFile; fileRef = 11525D152CAB34BE002FFA60 /* Desert */; };
+		11525D182CAB34BE002FFA60 /* Forest in Resources */ = {isa = PBXBuildFile; fileRef = 11525D162CAB34BE002FFA60 /* Forest */; };
+		11525D1D2CAB34DA002FFA60 /* Residential in Resources */ = {isa = PBXBuildFile; fileRef = 11525D192CAB34D9002FFA60 /* Residential */; };
+		11525D1E2CAB34DA002FFA60 /* River in Resources */ = {isa = PBXBuildFile; fileRef = 11525D1A2CAB34D9002FFA60 /* River */; };
+		11525D1F2CAB34DA002FFA60 /* Lake in Resources */ = {isa = PBXBuildFile; fileRef = 11525D1B2CAB34D9002FFA60 /* Lake */; };
+		11525D202CAB34DA002FFA60 /* Railway in Resources */ = {isa = PBXBuildFile; fileRef = 11525D1C2CAB34DA002FFA60 /* Railway */; };
 		119907F42CA8015300458BD8 /* ReceiptContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119907F32CA8015300458BD8 /* ReceiptContentsViewController.swift */; };
 		119907F62CA803B100458BD8 /* LML 2 in Resources */ = {isa = PBXBuildFile; fileRef = 119907F52CA803B100458BD8 /* LML 2 */; };
 		11A10DAC2C9996CF002808A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A10DAB2C9996CF002808A3 /* ContentView.swift */; };
@@ -29,6 +40,17 @@
 		11525D052CAA78F2002FFA60 /* Parking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Parking; sourceTree = "<group>"; };
 		11525D072CAA7907002FFA60 /* Airport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airport; sourceTree = "<group>"; };
 		11525D092CAA790E002FFA60 /* Port */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Port; sourceTree = "<group>"; };
+		11525D0B2CAB2986002FFA60 /* City */ = {isa = PBXFileReference; lastKnownFileType = folder; path = City; sourceTree = "<group>"; };
+		11525D0C2CAB2986002FFA60 /* Grassland */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Grassland; sourceTree = "<group>"; };
+		11525D0D2CAB2987002FFA60 /* Highway */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Highway; sourceTree = "<group>"; };
+		11525D112CAB34A6002FFA60 /* Agriculture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Agriculture; sourceTree = "<group>"; };
+		11525D132CAB34B0002FFA60 /* Beach */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Beach; sourceTree = "<group>"; };
+		11525D152CAB34BE002FFA60 /* Desert */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Desert; sourceTree = "<group>"; };
+		11525D162CAB34BE002FFA60 /* Forest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Forest; sourceTree = "<group>"; };
+		11525D192CAB34D9002FFA60 /* Residential */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Residential; sourceTree = "<group>"; };
+		11525D1A2CAB34D9002FFA60 /* River */ = {isa = PBXFileReference; lastKnownFileType = folder; path = River; sourceTree = "<group>"; };
+		11525D1B2CAB34D9002FFA60 /* Lake */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lake; sourceTree = "<group>"; };
+		11525D1C2CAB34DA002FFA60 /* Railway */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Railway; sourceTree = "<group>"; };
 		119907F32CA8015300458BD8 /* ReceiptContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptContentsViewController.swift; sourceTree = "<group>"; };
 		119907F52CA803B100458BD8 /* LML 2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "LML 2"; sourceTree = "<group>"; };
 		11A10DAB2C9996CF002808A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +122,17 @@
 		FAB06DFE2272614F00B3D181 /* BusinessCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				11525D1B2CAB34D9002FFA60 /* Lake */,
+				11525D1C2CAB34DA002FFA60 /* Railway */,
+				11525D192CAB34D9002FFA60 /* Residential */,
+				11525D1A2CAB34D9002FFA60 /* River */,
+				11525D152CAB34BE002FFA60 /* Desert */,
+				11525D162CAB34BE002FFA60 /* Forest */,
+				11525D132CAB34B0002FFA60 /* Beach */,
+				11525D112CAB34A6002FFA60 /* Agriculture */,
+				11525D0B2CAB2986002FFA60 /* City */,
+				11525D0C2CAB2986002FFA60 /* Grassland */,
+				11525D0D2CAB2987002FFA60 /* Highway */,
 				11525D092CAA790E002FFA60 /* Port */,
 				11525D072CAA7907002FFA60 /* Airport */,
 				11525D052CAA78F2002FFA60 /* Parking */,
@@ -178,11 +211,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11525D202CAB34DA002FFA60 /* Railway in Resources */,
+				11525D172CAB34BE002FFA60 /* Desert in Resources */,
+				11525D1D2CAB34DA002FFA60 /* Residential in Resources */,
+				11525D182CAB34BE002FFA60 /* Forest in Resources */,
+				11525D102CAB2987002FFA60 /* Highway in Resources */,
 				11525D082CAA7907002FFA60 /* Airport in Resources */,
+				11525D1E2CAB34DA002FFA60 /* River in Resources */,
+				11525D142CAB34B0002FFA60 /* Beach in Resources */,
+				11525D122CAB34A6002FFA60 /* Agriculture in Resources */,
 				11525D0A2CAA790E002FFA60 /* Port in Resources */,
 				11525D062CAA78F2002FFA60 /* Parking in Resources */,
 				119907F62CA803B100458BD8 /* LML 2 in Resources */,
 				FAB06E072272615200B3D181 /* Assets.xcassets in Resources */,
+				11525D1F2CAB34DA002FFA60 /* Lake in Resources */,
+				11525D0F2CAB2987002FFA60 /* Grassland in Resources */,
+				11525D0E2CAB2987002FFA60 /* City in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
