@@ -1,11 +1,18 @@
-//ImageTextRecognition.swift
+// ImageTextRecognition.swift
 import Foundation
 import Vision
 import SwiftUI
 
 class ImageTextRecognition: ObservableObject {
     @Published var recognizedTextInfoList: [RecognizedTextData] = []
-    
+
+    // Dynamic color generation using hue value
+    func colorForCharacter(at index: Int, total: Int) -> UIColor {
+        // Normalize the index to a value between 0 and 1
+        let hue = CGFloat(index) / CGFloat(max(total, 1))  // Avoid divide by zero
+        return UIColor(hue: hue, saturation: 0.7, brightness: 0.9, alpha: 1.0)
+    }
+
     func recognizeText(from directoryPath: String) {
         recognizedTextInfoList.removeAll()
 
@@ -40,6 +47,10 @@ class ImageTextRecognition: ObservableObject {
                     let recognizedStrings = observations.compactMap { observation in
                         observation.topCandidates(1).first?.string
                     }
+
+                    let confidenceLevels = observations.compactMap { observation in
+                        observation.topCandidates(1).first?.confidence
+                    }
                     
                     let boundingBoxes = observations.map { observation in
                         let boundingBox = observation.boundingBox
@@ -49,12 +60,17 @@ class ImageTextRecognition: ObservableObject {
 
                     if !recognizedStrings.isEmpty {
                         DispatchQueue.main.async {
-                            let recognizedInfo = RecognizedTextData(filename: imageName, recognizedText: recognizedStrings, boundingBoxes: boundingBoxes)
+                            let recognizedInfo = RecognizedTextData(
+                                filename: imageName,
+                                recognizedText: recognizedStrings,
+                                boundingBoxes: boundingBoxes
+                            )
                             self.recognizedTextInfoList.append(recognizedInfo)
 
                             print("File: \(imageName)")
-                            recognizedStrings.forEach { recognizedText in
-                                print("Recognized Text: \(recognizedText)")
+                            for (recognizedText, confidence) in zip(recognizedStrings, confidenceLevels) {
+                                let confidencePercentage = confidence * 100
+                                print("Recognized Text: \(recognizedText) (Confidence: \(confidencePercentage)%)")
                             }
                         }
                     }
@@ -71,6 +87,7 @@ class ImageTextRecognition: ObservableObject {
         }
     }
 
+    // Convert bounding box coordinates to image coordinates
     func convert(boundingBox: CGRect, to bounds: CGRect) -> CGRect {
         let imageWidth = bounds.width
         let imageHeight = bounds.height

@@ -4,9 +4,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
-    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/semantic_drone_dataset_original_images_5"
-    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/semantic_drone_dataset_original_images" //change each time!!!!
-    var body: some View {
+    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Parking"
+    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/Parking" // Change each time!
+        var body: some View {
         VStack {
             Text("Recognized Text and Files:")
                 .font(.headline)
@@ -27,7 +27,8 @@ struct ContentView: View {
                                 .frame(width: displayedWidth, height: displayedHeight)
                             
                             GeometryReader { geometry in
-                                ForEach(recognizedInfo.boundingBoxes, id: \.self) { box in
+                                ForEach(recognizedInfo.boundingBoxes.indices, id: \.self) { index in
+                                    let box = recognizedInfo.boundingBoxes[index]
                                     let scaleX = displayedWidth / imageSize.width
                                     let scaleY = displayedHeight / imageSize.height
                                     let adjustedOriginX = box.rect.origin.x * scaleX
@@ -36,7 +37,7 @@ struct ContentView: View {
                                     let adjustedHeight = box.rect.height * scaleY
 
                                     Rectangle()
-                                        .stroke(Color.red, lineWidth: 2)
+                                        .stroke(Color(imageTextRecognition.colorForCharacter(at: index, total: recognizedInfo.recognizedText.count)), lineWidth: 2)
                                         .frame(width: adjustedWidth, height: adjustedHeight)
                                         .position(x: adjustedOriginX + adjustedWidth / 2,
                                                   y: adjustedOriginY + adjustedHeight / 2)
@@ -50,8 +51,9 @@ struct ContentView: View {
                         .padding(.top, 5)
                     }
                     
-                    ForEach(recognizedInfo.recognizedText, id: \.self) { text in
-                        Text(text)
+                    ForEach(recognizedInfo.recognizedText.indices, id: \.self) { index in
+                        Text("\(recognizedInfo.recognizedText[index])")
+                            .foregroundColor(Color(imageTextRecognition.colorForCharacter(at: index, total: recognizedInfo.recognizedText.count)))
                     }
                 }
             }
@@ -78,21 +80,19 @@ struct ContentView: View {
         let renderedImage = renderer.image { context in
             uiImage.draw(at: .zero)
 
-            for box in recognizedInfo.boundingBoxes {
+            for (index, box) in recognizedInfo.boundingBoxes.enumerated() {
                 let rect = box.rect
                 let convertedRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: rect.size.height)
                 let path = UIBezierPath(rect: convertedRect)
-                UIColor.red.setStroke()
+                let color = imageTextRecognition.colorForCharacter(at: index, total: recognizedInfo.recognizedText.count) // Color for each character
+                color.setStroke()
                 path.lineWidth = 2
                 path.stroke()
             }
         }
         
         let directoryName = URL(fileURLWithPath: directoryPath).lastPathComponent
-        
-
         let recognizedTextForFilename = recognizedInfo.recognizedText.first?.replacingOccurrences(of: "[^a-zA-Z0-9]", with: "_", options: .regularExpression) ?? "NoText"
-
         let combinedFilename = "\(directoryName)_\(recognizedInfo.filename)_\(recognizedTextForFilename.prefix(10)).png"
         let filePath = "\(savePath)/\(combinedFilename)"
         
@@ -109,12 +109,3 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        if #available(iOS 14.0, *) {
-            ContentView()
-        } else {
-            
-        }
-    }
-}
