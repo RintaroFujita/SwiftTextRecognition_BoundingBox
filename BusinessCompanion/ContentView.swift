@@ -5,8 +5,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var imageTextRecognition = ImageTextRecognition()
     
-    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Agriculture"
-    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/Agriculture" // Change each time!
+    let directoryPath = "/Users/r/github/SwiftTextRecognition_BoundingBox/BusinessCompanion/Parking"
+    @State private var saveDirectory: String = "/Users/r/github/SwiftTextRecognitoin_MisrecognizeDatasetImage/Parking" // Change each time!
 
     var body: some View {
         VStack {
@@ -89,7 +89,7 @@ struct ContentView: View {
 
             // Font settings for drawing recognized text
             let fontSize: CGFloat = 12
-            let textAttributes: [NSAttributedString.Key: Any] = [
+            let _: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: fontSize),
                 .foregroundColor: UIColor.black // Default text color, can be customized
             ]

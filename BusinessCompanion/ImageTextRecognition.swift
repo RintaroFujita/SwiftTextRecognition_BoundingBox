@@ -6,9 +6,7 @@ import SwiftUI
 class ImageTextRecognition: ObservableObject {
     @Published var recognizedTextInfoList: [RecognizedTextData] = []
 
-    // Dynamic color generation using hue value
     func colorForCharacter(at index: Int, total: Int) -> UIColor {
-        // Normalize the index to a value between 0 and 1
         let hue = CGFloat(index) / CGFloat(max(total, 1))  // Avoid divide by zero
         return UIColor(hue: hue, saturation: 0.7, brightness: 0.9, alpha: 1.0)
     }
